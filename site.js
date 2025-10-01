@@ -19,5 +19,5 @@ document.addEventListener("keydown", unmute);
 unmute();
 
 $(function(){
-  $("#nav").load("nav.html");
+	$("#nav").load("nav.html");
 });
