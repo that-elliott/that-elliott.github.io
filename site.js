@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function()
 	{
 	var hour = new Date().getHours();
 	if (hour >= 8 && hour < 19) {
-		document.body.classList.add("night");
-	} else {
 		document.body.classList.add("day");
+	} else {
+		document.body.classList.add("night");
 	}
 });
 
@@ -16,4 +16,8 @@ function unmute() {
 }
 document.addEventListener("click", unmute);
 document.addEventListener("keydown", unmute);
-//unmute();
+unmute();
+
+$(function(){
+  $("#nav").load("nav.html");
+});
