@@ -2,20 +2,6 @@ body {
     font-family: sans-serif;
 }
 
-body.night {
-	color: #afffff;
-	background-image: url("galaxy.jpeg");
-	background-repeat: repeat;
-}
-
-body.day {
-	background-color: #bEF;
-}
-
-body.night a {
-	color: #44ff66
-}
-
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -27,22 +13,17 @@ body.night a {
 .box {
 	width: 80%;
     margin: 10% auto;
-    border: 5px double black;
+    border: 5px double #213;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.box img {
-	width: 100%;
+img {
+	height: 100%;
+	box-sizing: border-box;
 	object-fit: contain;
-}
-
-body.night .box {
-    background-color: #917;
-}
-
-body.day .box {
-	background-color: #fffdfa;
+	border-radius: 5px;
+	filter: drop-shadow(2px 2px 4px black);
 }
 
 .center {
@@ -59,10 +40,23 @@ body.day .box {
 	font-weight: bold;
 }
 
-body.night .warning {
-	color: yellow;
+.scroll {
+	width: 80%;
+	height: 800px;
+	overflow: hidden;
+	padding: 10px;
+	border: 1px, solid, black;
 }
 
-body.day .warning {
-	color: red;
+.row {
+	position: relative;
+	height:200px;
+	display: flex;
+	gap: 1%;
+	justify-content: space-around;
+}
+
+.photo {
+	height: 200px;
+	width: auto;
 }

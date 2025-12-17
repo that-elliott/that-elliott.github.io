@@ -1,23 +1,20 @@
-document.addEventListener("DOMContentLoaded", function()
-	{
-	var hour = new Date().getHours();
-	if (hour >= 8 && hour < 19) {
-		document.body.classList.add("day");
-	} else {
-		document.body.classList.add("night");
-	}
-});
-
-var audio = document.getElementById("bg-music");
-function unmute() {
-	audio.muted = false;
-	document.removeEventListener("click", unmute);
-	document.removeEventListener("keydown", unmute);
+function autoScroll(scrollContent) {
+    // check if reached the bottom
+    if (scrollContent.scrollLeft >= scrollContent.scrollWidth - scrollContent.clientWidth) {
+        // if at the bottom, jump back to the top
+        scrollContent.scrollLeft = 0;
+    } else {
+        scrollContent.scrollLeft += 1; 
+    }
 }
-document.addEventListener("click", unmute);
-document.addEventListener("keydown", unmute);
-unmute();
 
-$(function(){
-	$("#nav").load("nav.html");
-});
+function scrollAll() {
+	var scrollContents = document.getElementsByClassName("scroll-content");
+
+	for (var scrollContent in scrollContents) {
+		autoScroll(scrollContent);
+	}
+}
+
+
+setInterval(scrollAll, 50);
