@@ -1,5 +1,26 @@
+@font-face {
+	font-family: "katwijk-mono";
+	src: url("fonts/katwijk-mono-regular.woff2") format("woff2");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "katwijk-mono-bold";
+	src: url("fonts/katwijk-mono-bold-web.woff2") format("woff2");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "union-gothic";
+	src: url("fonts/union_gothic.woff2") format("woff2-variations");
+	font-weight: 100 900;
+}
+
+
 body {
-    font-family: sans-serif;
+    font-family: "katwijk-mono", serif;
+	background-color: #303134;
+	color: #f0f0f0;
 }
 
 .container {
@@ -8,22 +29,14 @@ body {
     display: flex;
 	padding: 20px;
     box-sizing: border-box;
-}
-
-.box {
-	width: 80%;
-    margin: 10% auto;
-    border: 5px double #213;
-    padding: 10px;
-    box-sizing: border-box;
+	justify-content: space-between;
 }
 
 img {
-	height: 100%;
+	border-radius: 0.5em;
 	box-sizing: border-box;
-	object-fit: contain;
-	border-radius: 5px;
-	filter: drop-shadow(2px 2px 4px black);
+	filter: drop-shadow(0.25em 0.25em 0.5em black);
+	max-width: 25em;
 }
 
 .center {
@@ -31,32 +44,50 @@ img {
     word-wrap: break-word;
 }
 
-.sidebar {
-    flex: 0 0 25%;
-}
-
 
 .warning {
 	font-weight: bold;
 }
 
-.scroll {
+.gallery {
 	width: 80%;
 	height: 800px;
-	overflow: hidden;
-	padding: 10px;
-	border: 1px, solid, black;
+	padding: 5px;
+	max-width: 80rem;
+  	margin-inline: auto;
+  	padding-inline: var(--gutter);
 }
 
-.row {
-	position: relative;
-	height:200px;
+.masonry {
+  --gutter: 0.25em;
+  --flow-space: var(--gutter);
+  --switcher-target-container-width: 25rem;
+}
+
+.masonry img {
+	width: 100%;
+}
+
+.switcher {
 	display: flex;
-	gap: 1%;
-	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: var(--gutter, 1em);
+	align-items: var(--switcher-vertical-alignment, flex-start);
 }
 
-.photo {
-	height: 200px;
-	width: auto;
+.switcher > * {
+	flex-grow: 1;
+	flex-basis: calc(
+		(var(--switcher-target-container-width, 40rem) - 100%) * 999
+	);
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+h1 {
+	color: #fafcff;
+	font-family: "union-gothic";
+	font-size: 36pt;
 }
