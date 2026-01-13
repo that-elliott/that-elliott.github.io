@@ -5,7 +5,7 @@
 }
 
 @font-face {
-	font-family: "katwijk-mono-bold";
+	font-family: "katwijk-mono";
 	src: url("fonts/katwijk-mono-bold-web.woff2") format("woff2");
 	font-weight: bold;
 }
@@ -29,31 +29,22 @@ body {
     display: flex;
 	padding: 20px;
     box-sizing: border-box;
-	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	gap: 1em;
 }
 
 img {
+	width: 100%;
 	border-radius: 0.5em;
 	box-sizing: border-box;
 	filter: drop-shadow(0.25em 0.25em 0.5em black);
-	max-width: 25em;
-}
-
-.center {
-    flex: 1;
-    word-wrap: break-word;
-}
-
-
-.warning {
-	font-weight: bold;
 }
 
 .gallery {
-	width: 80%;
-	height: 800px;
+	align-self: center;
+	max-width: 80%;
 	padding: 5px;
-	max-width: 80rem;
   	margin-inline: auto;
   	padding-inline: var(--gutter);
 }
@@ -90,4 +81,56 @@ h1 {
 	color: #fafcff;
 	font-family: "union-gothic";
 	font-size: 36pt;
+}
+
+a {
+	width: 100%;
+	color:#F59D9E;
+	transition: 0.3s ease;
+}
+
+a:hover {
+	color: #F16062;
+}
+
+.tile {
+	width: 60%;
+	aspect-ratio: 3 / 1;
+	overflow: hidden;
+	border-radius: 0.5em;
+	filter: drop-shadow(0.25em 0.25em 0.5em black);
+	transition: all 0.3s ease;
+}
+
+.tile:hover {
+	aspect-ratio: 2 / 1;
+}
+
+.tile img {
+	border-radius: 0px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+	filter: grayscale(70%);
+}
+
+.tile:hover img {
+	filter: grayscale(0%);
+}
+
+.tile h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-shadow: 0.125em 0.125em 0.25em black;
+}
+
+.box {
+    max-width: 1200px;
+    margin: 0 auto;
+	padding: 20px;
+    box-sizing: border-box;
 }
