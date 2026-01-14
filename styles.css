@@ -80,7 +80,7 @@ img {
 h1 {
 	color: #fafcff;
 	font-family: "union-gothic";
-	font-size: 36pt;
+	font-size: clamp(0.1rem,5vw,4rem);
 }
 
 a {
